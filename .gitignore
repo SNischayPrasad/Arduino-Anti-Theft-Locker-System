@@ -1,0 +1,7 @@
+.arduino/
+.tools/
+build/
+*.hex
+*.elf
+*.zip
+__pycache__/
