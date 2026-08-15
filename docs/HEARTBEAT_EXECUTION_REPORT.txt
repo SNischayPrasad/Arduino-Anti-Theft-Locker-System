@@ -1,0 +1,52 @@
+HEARTBEAT MONITOR - VIRTUAL EXECUTION REPORT
+Generated: 2026-08-15 (Asia/Calcutta)
+
+PRODUCTION TARGET
+  Board: ESP32 Dev Module
+  FQBN: esp32:esp32:esp32
+  ESP32 Arduino core: 3.3.11
+  Blynk library: 1.3.5
+  PulseSensor Playground library: 2.5.0
+
+PRODUCTION COMPILE: SUCCESS
+  Sketch flash: 926,399 bytes / 1,310,720 bytes (70%)
+  Global RAM:     47,756 bytes /   327,680 bytes (14%)
+  Remaining RAM: 279,924 bytes
+
+ARDUINO VIRTUAL TEST COMPILE: SUCCESS
+  Target: Arduino UNO (arduino:avr:uno, AVR core 1.8.8)
+  Sketch flash: 3,338 bytes / 32,256 bytes (10%)
+  Global RAM:     511 bytes /  2,048 bytes (24%)
+  Remaining RAM: 1,537 bytes
+
+PYTHON VIRTUAL ENVIRONMENT: SUCCESS
+  Fresh environment: .venv (gitignored)
+  Command: .venv\Scripts\python.exe tools\heartbeat_demo.py
+  Result: 10/10 scenarios passed
+
+WOKWI VIRTUAL ARDUINO RUN: SUCCESS
+  The virtual UNO executed HeartbeatMonitorVirtualTest.ino.
+  Serial result: 10/10 scenarios passed.
+  Serial result: Virtual heartbeat alert test SUCCESS.
+
+VERIFIED SCENARIOS
+  [PASS] 72 BPM with 60-100 limits -> NORMAL
+  [PASS] 108 BPM with 60-100 limits -> HIGH + high_heart_rate event
+  [PASS] Repeated HIGH reading -> duplicate event suppressed
+  [PASS] 80 BPM recovery -> NORMAL + alerts rearmed
+  [PASS] 52 BPM with 60-100 limits -> LOW + low_heart_rate event
+  [PASS] Boundary values 60 and 100 BPM -> NORMAL
+  [PASS] 108 BPM with adjusted 50-120 limits -> NORMAL
+  [PASS] 45 BPM with adjusted limits -> LOW event
+  [PASS] 125 BPM with adjusted limits -> HIGH event
+
+SCREENSHOTS
+  screenshots/03-Heartbeat-Wokwi-Virtual-Test.png
+  screenshots/04-Heartbeat-Wokwi-Serial-Output.png
+
+IMPORTANT
+  Wokwi and the Python harness use mock Blynk event logs because no private
+  Blynk device token was supplied. The production ESP32 sketch calls the real
+  Blynk.logEvent API. A phone receives push notifications after the user adds
+  private credentials, creates the two matching Blynk events, enables their
+  push-notification option, and uploads the sketch to a connected ESP32.

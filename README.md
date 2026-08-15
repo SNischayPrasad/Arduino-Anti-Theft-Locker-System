@@ -1,5 +1,9 @@
 # Arduino Anti-Theft Locker System
 
+> Also included: [AI-Enabled Heartbeat Monitor with ESP32, PulseSensor, and
+> Blynk](HeartbeatMonitor/README.md), with a virtual Arduino test and adjustable
+> low/high BPM alert thresholds.
+
 An Arduino UNO locker controller that grants access when **either** an authorized MFRC522 RFID card or an enrolled R305 fingerprint matches. It drives a relay/solenoid lock, reports state on a 16x2 I2C LCD, and uses a SIM800L GSM module to send an immediate SMS after an unknown card or fingerprint attempt.
 
 ## Features

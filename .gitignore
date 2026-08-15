@@ -5,3 +5,5 @@ build/
 *.elf
 *.zip
 __pycache__/
+.venv/
+HeartbeatMonitor/HeartbeatSecrets.h
